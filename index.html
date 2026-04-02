@@ -1,119 +1,276 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohamed Aich | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Aich | Bewerbung</title>
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #0f172a;
-    color: white;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-}
+    body {
+      background: #0f172a;
+      color: white;
+      scroll-behavior: smooth;
+    }
 
-header h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(17, 24, 39, 0.95);
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
 
-header p {
-    color: #94a3b8;
-}
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
+    nav a:hover {
+      color: #38bdf8;
+    }
 
-.section {
-    margin: 30px 0;
-    padding: 20px;
-    background: #1e293b;
-    border-radius: 12px;
-}
+    /* HERO */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    }
 
-h2 {
-    color: #38bdf8;
-}
+    .hero {
+      animation: fadeIn 1.5s ease-in-out;
+    }
 
-ul {
-    padding-left: 20px;
-}
+    .profile {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #38bdf8;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
 
-a {
-    color: #38bdf8;
-    text-decoration: none;
-}
+    .hero h1 {
+      font-size: 45px;
+    }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #38bdf8;
-    color: black;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-</style>
+    .hero h2 {
+      color: #38bdf8;
+      margin: 10px 0;
+      font-size: 22px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #cbd5e1;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #38bdf8;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* SKILLS */
+    .skill {
+      margin: 15px 0;
+    }
+
+    .bar {
+      width: 100%;
+      background: #334155;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 10px;
+      background: #38bdf8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav>
+  <a href="#about">Über mich</a>
+  <a href="#skills">Kenntnisse</a>
+  <a href="#projects">Projekte</a>
+  <a href="#contact">Kontakt</a>
+</nav>
+
+<!-- HERO -->
 <header>
+  <div class="hero">
+    <img src="profile.jpg" class="profile">
+
     <h1>Mohamed Aich</h1>
-    <p>Elektroniker für Automatisierungstechnik</p>
+
+    <h2>Bewerbung zum Elektroniker für Automatisierungstechnik</h2>
+
+    <p>
+      Motivierter Bewerber mit starkem Interesse an Elektronik und Automatisierung.
+      Ziel: Eine Ausbildung in Deutschland zur praktischen und technischen Entwicklung.
+    </p>
+
+    <a class="btn" href="#contact">Kontakt aufnehmen</a>
+  </div>
 </header>
 
-<div class="container">
+<!-- ABOUT -->
+<section id="about">
+  <h2>Über mich</h2>
+  <div class="card">
+    Ich bin sehr motiviert und suche eine Ausbildung als Elektroniker für Automatisierungstechnik in Deutschland.
+    Ich lerne schnell und bin bereit, mich fachlich weiterzuentwickeln.
+  </div>
+</section>
 
-<div class="section">
-    <h2>Über mich</h2>
-    <p>
-        Ich bin ein motivierter Bewerber mit einem Diplom in Elektrotechnik.
-        Ich suche eine Ausbildung als Elektroniker für Automatisierungstechnik
-        und möchte meine technischen Kenntnisse praktisch weiterentwickeln.
-    </p>
-</div>
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Kenntnisse</h2>
 
-<div class="section">
-    <h2>Kenntnisse</h2>
-    <ul>
-        <li>SPS / PLC Grundlagen</li>
-        <li>Elektrotechnik</li>
-        <li>Schaltpläne lesen</li>
-        <li>Fehleranalyse</li>
-    </ul>
-</div>
+  <div class="skill">Elektronik
+    <div class="bar"><div class="fill" style="width:80%"></div></div>
+  </div>
 
-<div class="section">
-    <h2>Projekte</h2>
-    <ul>
-        <li>SPS Simulation und Programmierung</li>
-        <li>Elektronische Schaltungen aufgebaut</li>
-        <li>Wartung und Fehlerdiagnose</li>
-    </ul>
-</div>
+  <div class="skill">Automatisierungstechnik
+    <div class="bar"><div class="fill" style="width:70%"></div></div>
+  </div>
 
-<div class="section">
-    <h2>Lebenslauf</h2>
-    <a class="btn" href="#">CV herunterladen</a>
-</div>
+  <div class="skill">HTML / CSS
+    <div class="bar"><div class="fill" style="width:60%"></div></div>
+  </div>
 
-<div class="section">
-    <h2>Kontakt</h2>
-    <p>Email: mohamed.aich205@gmail.com</p>
-    <p>Telefon: +49 XXX XXXXXXX</p>
-</div>
+  <div class="skill">Deutsch B2
+    <div class="bar"><div class="fill" style="width:75%"></div></div>
+  </div>
+</section>
 
-</div>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projekte</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Entwicklung einer persönlichen Website mit HTML & CSS.</p>
+    </div>
+
+    <div class="card">
+      <h3>Elektronik Übungen</h3>
+      <p>Grundschaltungen und Sensorik getestet.</p>
+    </div>
+
+    <div class="card">
+      <h3>Automatisierungs-Idee</h3>
+      <p>Konzept für intelligente Lichtsteuerung entwickelt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Kontakt</h2>
+
+  <div class="card">
+    Email: yourmail@gmail.com<br>
+    WhatsApp: +212 ...<br>
+
+    <a class="btn" href="cv.pdf" download>Lebenslauf herunterladen</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Mohamed Aich | Bewerbung Portfolio
+</footer>
+
+<!-- JS ANIMATION -->
+<script>
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
