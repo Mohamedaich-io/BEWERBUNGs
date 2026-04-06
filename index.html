@@ -6,142 +6,78 @@
 <title>Bewerbung | Mohamed Aich</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Georgia', serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Georgia',serif;}
 
-body {
-  background: #f9f7f4;
-  color: #1e293b;
-}
+body{background:#f9f7f4;color:#1e293b;}
 
 /* NAV */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: white;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+nav{
+position:fixed;top:0;width:100%;
+background:white;padding:15px;text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
-
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #1e293b;
-}
+nav a{margin:0 15px;text-decoration:none;font-weight:bold;color:#1e293b;}
 
 /* HERO */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 120px 10%;
-  min-height: 100vh;
+.hero{
+display:flex;align-items:center;justify-content:space-between;
+padding:120px 10%;min-height:100vh;
+}
+.hero-text h1{font-size:60px;line-height:1.2;}
+.highlight{color:#e76f51;}
+.hero-text p{margin-top:20px;font-size:20px;}
+
+.btn{
+padding:12px 20px;border-radius:8px;text-decoration:none;
+margin-right:10px;font-weight:bold;
+}
+.primary{background:#e76f51;color:white;}
+.secondary{background:#eee;color:#333;}
+
+.hero-img img{
+width:350px;height:500px;object-fit:cover;border-radius:15px;
 }
 
-.hero-text {
-  flex: 1;
+/* SECTIONS */
+section{padding:80px 10%;background:white;}
+h2{font-size:32px;margin-bottom:20px;}
+
+.box{
+background:#fff3e6;padding:25px;border-radius:10px;
+line-height:1.8;
 }
 
-.hero-text h1 {
-  font-size: 60px;
-  line-height: 1.2;
+/* TIMELINE */
+.timeline div{
+margin-bottom:15px;padding:15px;
+background:#f1f5f9;border-radius:10px;
 }
 
-.hero-text .highlight {
-  color: #e76f51;
-}
-
-.hero-text p {
-  margin-top: 20px;
-  font-size: 20px;
-}
-
-.buttons {
-  margin-top: 25px;
-}
-
-.btn {
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.btn.primary {
-  background: #e76f51;
-  color: white;
-}
-
-.btn.secondary {
-  background: #eee;
-  color: #333;
-}
-
-/* IMAGE */
-.hero-img img {
-  width: 350px;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 15px;
-}
-
-/* SECTION */
-section {
-  padding: 80px 10%;
-  background: white;
-}
-
-section h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-/* ABOUT BOX */
-.about-box {
-  background: #fff3e6;
-  padding: 25px;
-  border-radius: 10px;
-}
+/* SKILLS */
+.skill{margin-bottom:15px;}
+.bar{background:#e2e8f0;height:10px;border-radius:10px;}
+.fill{height:100%;background:#e76f51;}
 
 /* PROJECTS */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
+.project{
+background:#f1f5f9;padding:20px;
+border-radius:10px;margin-bottom:20px;
+}
+.gallery{
+display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;
+}
+.gallery img{
+width:30%;border-radius:8px;
 }
 
-.card {
-  background: #f1f5f9;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
+/* VIDEO */
+video{border-radius:10px;}
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #eee;
-}
+footer{text-align:center;padding:20px;background:#eee;}
 
-/* RESPONSIVE */
-@media(max-width: 900px){
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
+@media(max-width:900px){
+.hero{flex-direction:column;text-align:center;}
 }
 </style>
 
@@ -149,79 +85,146 @@ footer {
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="#about">Über mich</a>
-  <a href="#projects">Projekte</a>
-  <a href="#contact">Kontakt</a>
+<a href="#about">Über mich</a>
+<a href="#career">Werdegang</a>
+<a href="#skills">Kompetenzen</a>
+<a href="#projects">Projekte</a>
+<a href="#video">Video</a>
+<a href="#contact">Kontakt</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
+<div class="hero-text">
+<h1>
+Bewerbung als <br>
+<span class="highlight">Elektroniker</span><br>
+für Automatisierungstechnik
+</h1>
 
-  <div class="hero-text">
-    <h1>
-      Bewerbung als <br>
-      <span class="highlight">Elektroniker</span><br>
-      für Automatisierungstechnik
-    </h1>
+<p>Mohamed Aich</p>
 
-    <p>Mohamed Aich</p>
-
-    <div class="buttons">
-      <a class="btn primary" href="cv.pdf">Bewerbung herunterladen</a>
-      <a class="btn secondary" href="#about">Mehr erfahren</a>
-    </div>
-  </div>
-
-  <div class="hero-img">
-    <img src="profile.jpg">
-  </div>
-
+<br>
+<a class="btn primary" href="cv.pdf">Bewerbung herunterladen</a>
+<a class="btn secondary" href="#about">Mehr erfahren</a>
 </div>
+
+<div class="hero-img">
+<img src="profile.jpg">
+</div>
+</div>
+
+<!-- VIDEO VORSTELLUNG -->
+<section id="video">
+<h2>Video Vorstellung</h2>
+
+<div style="text-align:center;">
+<video width="600" controls>
+<source src="video.mp4" type="video/mp4">
+</video>
+</div>
+</section>
+
+<!-- PRAKTISCHE ERFAHRUNGEN -->
+<section>
+<h2>Praktische Erfahrungen</h2>
+
+<div style="text-align:center;">
+<video width="600" controls>
+<source src="experience.mp4" type="video/mp4">
+</video>
+
+<p style="margin-top:15px;">
+In diesem Video zeige ich meine praktischen Erfahrungen im Bereich Elektronik und Automatisierung.
+</p>
+</div>
+</section>
 
 <!-- ABOUT -->
 <section id="about">
-  <h2>Über mich</h2>
+<h2>Über mich</h2>
 
-  <div class="about-box">
-    Ich bin ein motivierter Bewerber mit großem Interesse an Elektronik und Automatisierungstechnik.
-    Mein Ziel ist eine Ausbildung in Deutschland, um praktische Erfahrungen zu sammeln.
-  </div>
+<div class="box">
+Hier schreibst du deinen langen Text über dich selbst.
+
+Ich bin ein motivierter Bewerber mit Interesse an Elektronik und Automatisierungstechnik.
+Mein Ziel ist eine Ausbildung in Deutschland.
+</div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+<h2>Qualifikationen & Werdegang</h2>
+
+<div class="timeline">
+<div>2022 – Abitur abgeschlossen</div>
+<div>2024 – Diplom im Bereich Elektronik</div>
+<div>2025 – Deutsch B1 abgeschlossen</div>
+<div>Aktuell – Deutsch B2 Kurs</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Kompetenzen & Fähigkeiten</h2>
+
+<div class="skill">Elektronik
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<div class="skill">Automatisierung
+<div class="bar"><div class="fill" style="width:75%"></div></div>
+</div>
+
+<div class="skill">Programmierung
+<div class="bar"><div class="fill" style="width:60%"></div></div>
+</div>
+
+<div class="skill">Deutsch
+<div class="bar"><div class="fill" style="width:80%"></div></div>
+</div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2>Projekte</h2>
+<h2>Projekte</h2>
 
-  <div class="grid">
+<div class="project">
+<h3>Elektronik Projekt</h3>
+<p>Beschreibung des Projekts.</p>
 
-    <div class="card">
-      <img src="project1.jpg">
-      <p>Elektronik Übungen und Schaltungen</p>
-    </div>
+<div class="gallery">
+<img src="p1.jpg">
+<img src="p2.jpg">
+<img src="p3.jpg">
+</div>
+</div>
 
-    <div class="card">
-      <img src="project2.jpg">
-      <p>Automatisierung Konzept</p>
-    </div>
+<div class="project">
+<h3>Automatisierung Projekt</h3>
+<p>Beschreibung des Projekts.</p>
 
-    <div class="card">
-      <img src="project3.jpg">
-      <p>Portfolio Website</p>
-    </div>
+<div class="gallery">
+<img src="p4.jpg">
+<img src="p5.jpg">
+<img src="p6.jpg">
+</div>
+</div>
 
-  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Kontakt</h2>
+<h2>Kontakt</h2>
 
-  <p>Email: yourmail@gmail.com</p>
+<p>Email: yourmail@gmail.com</p>
+<p>WhatsApp: +212 ...</p>
 </section>
 
 <footer>
-  © 2026 Mohamed Aich
+© 2026 Mohamed Aich
 </footer>
 
 </body>
