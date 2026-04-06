@@ -80,19 +80,85 @@ footer{text-align:center;padding:20px;background:#eee;}
 .hero{flex-direction:column;text-align:center;}
 }
 </style>
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.logo {
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #1e293b;
+  position: relative;
+}
+
+.nav-links a.active {
+  color: #e76f51;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media(max-width: 800px){
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    display: none;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu {
+    display: block;
+  }
+}
 </head>
 
 <body>
 
 <!-- NAV -->
 <nav>
-<a href="#about">Über mich</a>
-<a href="#career">Werdegang</a>
-<a href="#skills">Kompetenzen</a>
-<a href="#projects">Projekte</a>
-<a href="#video">Video</a>
-<a href="#contact">Kontakt</a>
+  <div class="nav-container">
+
+    <div class="logo">Mohamed</div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#about">Über mich</a>
+      <a href="#career">Werdegang</a>
+      <a href="#skills">Kompetenzen</a>
+      <a href="#projects">Projekte</a>
+      <a href="#video">Video</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+
+    <div class="nav-right">
+      <button onclick="switchLang()">EN</button>
+      <div class="menu" onclick="toggleMenu()">☰</div>
+    </div>
+
+  </div>
 </nav>
 
 <!-- HERO -->
