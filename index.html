@@ -80,60 +80,7 @@ footer{text-align:center;padding:20px;background:#eee;}
 .hero{flex-direction:column;text-align:center;}
 }
 </style>
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.logo {
-  font-weight: bold;
-}
-
-.nav-links a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #1e293b;
-  position: relative;
-}
-
-.nav-links a.active {
-  color: #e76f51;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.menu {
-  display: none;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-/* MOBILE */
-@media(max-width: 800px){
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: white;
-    display: none;
-    flex-direction: column;
-    width: 200px;
-    padding: 20px;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu {
-    display: block;
-  }
-}
 </head>
 
 <body>
@@ -321,3 +268,46 @@ und bin immer motiviert, Neues zu lernen und meine Fähigkeiten weiterzuentwicke
 
 </body>
 </html>
+<script>
+// MENU
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
+
+// ACTIVE LINK
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if(pageYOffset >= sectionTop){
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(a => {
+    a.classList.remove("active");
+    if(a.getAttribute("href") === "#" + current){
+      a.classList.add("active");
+    }
+  });
+});
+
+// LANGUAGE SWITCH
+let german = true;
+
+function switchLang(){
+  german = !german;
+
+  if(!german){
+    document.querySelector("h1").innerHTML =
+      "Application as <br><span class='highlight'>Electronics Technician</span><br>for Automation Technology";
+  } else {
+    document.querySelector("h1").innerHTML =
+      "Bewerbung als <br><span class='highlight'>Elektroniker</span><br>für Automatisierungstechnik";
+  }
+}
+</script>
