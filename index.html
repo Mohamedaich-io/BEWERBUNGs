@@ -268,45 +268,7 @@ und bin immer motiviert, Neues zu lernen und meine Fähigkeiten weiterzuentwicke
 
 </body>
 </html>
-<script>
-// MENU
-function toggleMenu(){
-  document.getElementById("navLinks").classList.toggle("show");
-}
 
-// ACTIVE LINK
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if(pageYOffset >= sectionTop){
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(a => {
-    a.classList.remove("active");
-    if(a.getAttribute("href") === "#" + current){
-      a.classList.add("active");
-    }
-  });
-});
-
-// LANGUAGE SWITCH
-let german = true;
-
-function switchLang(){
-  german = !german;
-
-  if(!german){
-    document.querySelector("h1").innerHTML =
-      "Application as <br><span class='highlight'>Electronics Technician</span><br>for Automation Technology";
-  } else {
-    document.querySelector("h1").innerHTML =
       "Bewerbung als <br><span class='highlight'>Elektroniker</span><br>für Automatisierungstechnik";
   }
 }
