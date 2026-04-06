@@ -1,193 +1,156 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohamed Aich | Bewerbung Elektroniker</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bewerbung | Mohamed Aich</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
 
-    body {
-      background: #f8fafc;
-      color: #0f172a;
-    }
+body {
+  background: #f9f7f4;
+  color: #1e293b;
+}
 
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: white;
-      display: flex;
-      justify-content: center;
-      padding: 15px;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
 
-    nav a {
-      color: #0f172a;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #1e293b;
+}
 
-    nav a:hover {
-      color: #2563eb;
-    }
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 10%;
+  min-height: 100vh;
+}
 
-    /* HERO */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 100vh;
-      padding: 120px 10%;
-      gap: 60px;
-    }
+.hero-text {
+  flex: 1;
+}
 
-    .hero-text {
-      flex: 1;
-    }
+.hero-text h1 {
+  font-size: 60px;
+  line-height: 1.2;
+}
 
-    .hero-text h1 {
-      font-size: 55px;
-      margin-bottom: 10px;
-    }
+.hero-text .highlight {
+  color: #e76f51;
+}
 
-    .hero-text h2 {
-      font-size: 22px;
-      color: #2563eb;
-      margin-bottom: 20px;
-    }
+.hero-text p {
+  margin-top: 20px;
+  font-size: 20px;
+}
 
-    .hero-text p {
-      font-size: 18px;
-      color: #334155;
-      line-height: 1.7;
-      max-width: 520px;
-    }
+.buttons {
+  margin-top: 25px;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      margin-right: 10px;
-    }
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: bold;
+}
 
-    .btn.secondary {
-      background: #e2e8f0;
-      color: #0f172a;
-    }
+.btn.primary {
+  background: #e76f51;
+  color: white;
+}
 
-    /* IMAGE */
-    .hero-img img {
-      width: 340px;
-      height: 470px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    }
+.btn.secondary {
+  background: #eee;
+  color: #333;
+}
 
-    /* SECTIONS */
-    section {
-      padding: 90px 10%;
-      background: white;
-      margin-top: 20px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
+/* IMAGE */
+.hero-img img {
+  width: 350px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+}
 
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* SECTION */
+section {
+  padding: 80px 10%;
+  background: white;
+}
 
-    h2 {
-      font-size: 30px;
-      color: #2563eb;
-      margin-bottom: 20px;
-    }
+section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
 
-    .card {
-      background: #f1f5f9;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 15px;
-    }
+/* ABOUT BOX */
+.about-box {
+  background: #fff3e6;
+  padding: 25px;
+  border-radius: 10px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* PROJECTS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
 
-    /* SKILLS */
-    .skill {
-      margin-bottom: 15px;
-    }
+.card {
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 10px;
+}
 
-    .bar {
-      background: #e2e8f0;
-      height: 10px;
-      border-radius: 10px;
-      overflow: hidden;
-    }
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
 
-    .fill {
-      height: 100%;
-      background: #2563eb;
-    }
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #eee;
+}
 
-    /* CONTACT FORM */
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-    }
+/* RESPONSIVE */
+@media(max-width: 900px){
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f1f5f9;
-      color: #475569;
-    }
-
-    /* RESPONSIVE */
-    @media(max-width: 900px){
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-text p {
-        margin: auto;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#about">Über mich</a>
-  <a href="#skills">Kenntnisse</a>
   <a href="#projects">Projekte</a>
   <a href="#contact">Kontakt</a>
 </nav>
@@ -196,21 +159,22 @@
 <div class="hero">
 
   <div class="hero-text">
-    <h1>Mohamed Aich</h1>
+    <h1>
+      Bewerbung als <br>
+      <span class="highlight">Elektroniker</span><br>
+      für Automatisierungstechnik
+    </h1>
 
-    <h2>Bewerbung zum Elektroniker für Automatisierungstechnik</h2>
+    <p>Mohamed Aich</p>
 
-    <p>
-      Motivierter und lernbereiter Bewerber mit starkem Interesse an Elektronik und Automatisierungstechnik.
-      Ziel: Eine Ausbildung in Deutschland zur Entwicklung praktischer und technischer Fähigkeiten.
-    </p>
-
-    <a class="btn" href="cv.pdf" download>Lebenslauf</a>
-    <a class="btn secondary" href="#contact">Kontakt</a>
+    <div class="buttons">
+      <a class="btn primary" href="cv.pdf">Bewerbung herunterladen</a>
+      <a class="btn secondary" href="#about">Mehr erfahren</a>
+    </div>
   </div>
 
   <div class="hero-img">
-    <img src="profile.jpg" alt="Profilbild">
+    <img src="profile.jpg">
   </div>
 
 </div>
@@ -218,21 +182,10 @@
 <!-- ABOUT -->
 <section id="about">
   <h2>Über mich</h2>
-  <div class="card">
-    Ich bin ein motivierter Bewerber für eine Ausbildung als Elektroniker für Automatisierungstechnik in Deutschland.
-    Ich arbeite zuverlässig, lerne schnell und interessiere mich stark für Technik und Automatisierung.
-  </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Kenntnisse</h2>
-
-  <div class="card">
-    <div class="skill">Elektronik<div class="bar"><div class="fill" style="width:85%"></div></div></div>
-    <div class="skill">Automatisierungstechnik<div class="bar"><div class="fill" style="width:75%"></div></div></div>
-    <div class="skill">HTML / CSS<div class="bar"><div class="fill" style="width:65%"></div></div></div>
-    <div class="skill">Deutsch B2<div class="bar"><div class="fill" style="width:80%"></div></div></div>
+  <div class="about-box">
+    Ich bin ein motivierter Bewerber mit großem Interesse an Elektronik und Automatisierungstechnik.
+    Mein Ziel ist eine Ausbildung in Deutschland, um praktische Erfahrungen zu sammeln.
   </div>
 </section>
 
@@ -241,20 +194,22 @@
   <h2>Projekte</h2>
 
   <div class="grid">
+
     <div class="card">
-      <h3>Portfolio Website</h3>
-      <p>Erstellt mit HTML & CSS und auf GitHub Pages veröffentlicht.</p>
+      <img src="project1.jpg">
+      <p>Elektronik Übungen und Schaltungen</p>
     </div>
 
     <div class="card">
-      <h3>Elektronik Projekte</h3>
-      <p>Grundschaltungen und Sensorik getestet und analysiert.</p>
+      <img src="project2.jpg">
+      <p>Automatisierung Konzept</p>
     </div>
 
     <div class="card">
-      <h3>Automatisierungsidee</h3>
-      <p>Entwurf eines intelligenten Lichtsteuerungssystems.</p>
+      <img src="project3.jpg">
+      <p>Portfolio Website</p>
     </div>
+
   </div>
 </section>
 
@@ -262,36 +217,12 @@
 <section id="contact">
   <h2>Kontakt</h2>
 
-  <div class="card">
-    <form action="mailto:yourmail@gmail.com" method="post" enctype="text/plain">
-      <input type="text" placeholder="Name">
-      <input type="email" placeholder="E-Mail">
-      <textarea rows="5" placeholder="Nachricht"></textarea>
-      <button class="btn" type="submit">Senden</button>
-    </form>
-
-    <br>
-    <a class="btn secondary" href="cv.pdf" download>CV herunterladen</a>
-  </div>
+  <p>Email: yourmail@gmail.com</p>
 </section>
 
 <footer>
-  © 2026 Mohamed Aich | Bewerbung Portfolio
+  © 2026 Mohamed Aich
 </footer>
-
-<script>
-  const sections = document.querySelectorAll("section");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  sections.forEach(section => observer.observe(section));
-</script>
 
 </body>
 </html>
