@@ -42,26 +42,61 @@ width:350px;height:500px;object-fit:cover;border-radius:15px;
 section{padding:80px 10%;background:white;}
 h2{font-size:32px;margin-bottom:20px;}
 
+/* ANIMATION */
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s cubic-bezier(0.25,1,0.5,1);
+}
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* VIDEO GRID */
+.video-container{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+}
+.video-box{
+flex:1;
+min-width:300px;
+max-width:500px;
+background:#f1f5f9;
+padding:15px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+.video-box video{
+width:100%;
+border-radius:10px;
+}
+
+/* ABOUT */
 .box{
-background:#fff3e6;padding:25px;border-radius:10px;
-line-height:1.8;
+background:#fff3e6;padding:25px;border-radius:10px;line-height:1.8;
 }
 
 /* TIMELINE */
 .timeline div{
-margin-bottom:15px;padding:15px;
-background:#f1f5f9;border-radius:10px;
+margin-bottom:15px;padding:15px;background:#f1f5f9;border-radius:10px;
 }
 
 /* SKILLS */
 .skill{margin-bottom:15px;}
 .bar{background:#e2e8f0;height:10px;border-radius:10px;}
-.fill{height:100%;background:#e76f51;}
+.fill{
+height:100%;
+background:#e76f51;
+width:0;
+transition:width 1.5s ease-in-out;
+}
 
 /* PROJECTS */
 .project{
-background:#f1f5f9;padding:20px;
-border-radius:10px;margin-bottom:20px;
+background:#f1f5f9;padding:20px;border-radius:10px;margin-bottom:20px;
 }
 .gallery{
 display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;
@@ -70,9 +105,6 @@ display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;
 width:30%;border-radius:8px;
 }
 
-/* VIDEO */
-video{border-radius:10px;}
-
 /* FOOTER */
 footer{text-align:center;padding:20px;background:#eee;}
 
@@ -80,31 +112,18 @@ footer{text-align:center;padding:20px;background:#eee;}
 .hero{flex-direction:column;text-align:center;}
 }
 </style>
-
 </head>
 
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-container">
-
-
-
-   <div class="nav-links" id="navLinks">
-      <a href="#about">Über mich</a>
-      <a href="#career">Werdegang</a>
-      <a href="#skills">Kompetenzen</a>
-      <a href="#projects">Projekte</a>
-      <a href="#video">Video</a>
-      <a href="#contact">Kontakt</a>
-    </div>
-
-    <div class="nav-right">
-    
-    </div>
-
-  </div>
+<a href="#about">Über mich</a>
+<a href="#career">Werdegang</a>
+<a href="#skills">Kompetenzen</a>
+<a href="#projects">Projekte</a>
+<a href="#video">Video</a>
+<a href="#contact">Kontakt</a>
 </nav>
 
 <!-- HERO -->
@@ -124,67 +143,49 @@ für Automatisierungstechnik
 </div>
 
 <div class="hero-img">
-<img src="cvv.jpg">
+<img src="profile.jpg">
 </div>
 </div>
 
-<!-- VIDEO VORSTELLUNG -->
-<section id="video">
-<h2>Video Vorstellung</h2>
+<!-- VIDEOS -->
+<section id="video" class="fade-up">
+<h2>Videos</h2>
 
-<div style="text-align:center;">
-<video width="600" controls>
-<source src="BEWERBUNGSVIDEO.mp4" type="video/mp4">
+<div class="video-container">
+
+<div class="video-box">
+<h3>Video Vorstellung</h3>
+<video controls>
+<source src="video.mp4" type="video/mp4">
 </video>
 </div>
-</section>
 
-<!-- PRAKTISCHE ERFAHRUNGEN -->
-<section>
-<h2>Praktische Erfahrungen</h2>
-
-<div style="text-align:center;">
-<video width="600" controls>
-<source src="PRAKTISCHEN ERFAHRUNGEN..mp4" type="video/mp4">
+<div class="video-box">
+<h3>Praktische Erfahrungen</h3>
+<video controls>
+<source src="experience.mp4" type="video/mp4">
 </video>
 
-<p style="margin-top:15px;">
-In diesem Video zeige ich meine praktischen Erfahrungen im Bereich Elektronik und Automatisierung.
+<p style="margin-top:10px;">
+Praktische Übungen im Bereich Elektronik und Automatisierung.
 </p>
+</div>
+
 </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="fade-up">
 <h2>Über mich</h2>
 
 <div class="box">
-Mein Name ist Mohamed Aich, ich bin 20 Jahre alt und komme aus Marokko.
-
-Im Jahr 2022 habe ich mein Abitur abgeschlossen,
-und im Jahr 2024 mein Diplom als Fachtechniker für Elektronik, Automatisierung und Robotik erworben.
-
-Während meiner Ausbildung konnte ich viele praktische Erfahrungen sammeln,
-zum Beispiel mit SPS-Programmierung, Mikrocontrollern
-sowie der Installation und Reparatur von elektronischen Motorsteuerungssystemen.
-
-Außerdem habe ich ein Praktikum absolviert,
-bei dem ich viel über die Installation und Wartung von Schaltschränken, Motoren und Hochspannungsanlagen gelernt habe.
-
-Im Juli 2025 habe ich mein B1-Zertifikat in Deutsch erhalten
-und zurzeit besuche ich den B2-Deutschkurs,
-um meine Sprachkenntnisse weiter zu verbessern und mich auf das Leben und Arbeiten in Deutschland vorzubereiten.
-
-Ich interessiere mich sehr für eine Ausbildung als Elektroniker für Automatisierungstechnik,
-weil ich gerne technische Probleme löse und moderne Anlagen steuere und programmiere.
-
-Ich bin zuverlässig, arbeite gerne im Team
-und bin immer motiviert, Neues zu lernen und meine Fähigkeiten weiterzuentwickeln.
+Ich bin ein motivierter Bewerber mit großem Interesse an Elektronik und Automatisierungstechnik.
+Mein Ziel ist eine Ausbildung in Deutschland, um meine Fähigkeiten weiterzuentwickeln.
 </div>
 </section>
 
 <!-- CAREER -->
-<section id="career">
+<section id="career" class="fade-up">
 <h2>Qualifikationen & Werdegang</h2>
 
 <div class="timeline">
@@ -196,37 +197,28 @@ und bin immer motiviert, Neues zu lernen und meine Fähigkeiten weiterzuentwicke
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
-  <h2>Kompetenzen & Fähigkeiten</h2>
+<section id="skills" class="fade-up">
+<h2>Kompetenzen & Fähigkeiten</h2>
 
-  <!-- TECHNICAL -->
-  <div class="card">
-    <h3>Technische Fähigkeiten</h3>
+<div class="skill">Elektronik
+<div class="bar"><div class="fill" data-width="85%"></div></div>
+</div>
 
-    <p>
-      • Grundlagen der Elektronik und industriellen Automatisierung<br>
-      • Installation und Wartung von Schaltschränken<br>
-      • Programmierung von Mikrocontrollern zur Steuerung industrieller Systeme<br>
-      • Nutzung und Fehlerbehebung in Überwachungs- und Steuerungsnetzwerken
-    </p>
-  </div>
+<div class="skill">Automatisierung
+<div class="bar"><div class="fill" data-width="75%"></div></div>
+</div>
 
-  <!-- IT -->
-  <div class="card" style="margin-top:20px;">
-    <h3>IT Kenntnisse</h3>
+<div class="skill">Programmierung
+<div class="bar"><div class="fill" data-width="60%"></div></div>
+</div>
 
-    <p>
-      • MS Office<br>
-      • Proteus ISIS<br>
-      • AutoCAD<br>
-      • MikroC
-    </p>
-  </div>
-
+<div class="skill">Deutsch
+<div class="bar"><div class="fill" data-width="80%"></div></div>
+</div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" class="fade-up">
 <h2>Projekte</h2>
 
 <div class="project">
@@ -254,7 +246,7 @@ und bin immer motiviert, Neues zu lernen und meine Fähigkeiten weiterzuentwicke
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="fade-up">
 <h2>Kontakt</h2>
 
 <p>Email: yourmail@gmail.com</p>
@@ -265,10 +257,34 @@ und bin immer motiviert, Neues zu lernen und meine Fähigkeiten weiterzuentwicke
 © 2026 Mohamed Aich
 </footer>
 
+<script>
+// SCROLL ANIMATION
+const elements = document.querySelectorAll(".fade-up");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+
+elements.forEach(el => observer.observe(el));
+
+// SKILLS ANIMATION
+const fills = document.querySelectorAll(".fill");
+
+const skillObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const fill = entry.target;
+      fill.style.width = fill.getAttribute("data-width");
+    }
+  });
+}, { threshold: 0.5 });
+
+fills.forEach(fill => skillObserver.observe(fill));
+</script>
+
 </body>
 </html>
-
-      "Bewerbung als <br><span class='highlight'>Elektroniker</span><br>für Automatisierungstechnik";
-  }
-}
-</script>
