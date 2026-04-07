@@ -171,78 +171,37 @@ h2{
 }
 
 /* SKILLS */
-.skills-container{
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-  flex-wrap:wrap;
-}
+<section id="skills" class="fade-up">
+  <h2>Kompetenzen & Fähigkeiten</h2>
 
-.card{
-  flex:1;
-  min-width:280px;
-  max-width:48%;
-  background:#f1f5f9;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
-  transition:0.4s;
-}
+  <div class="skills-container">
 
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 15px 30px rgba(0,0,0,0.15);
-}
+    <!-- TECHNICAL -->
+    <div class="card">
+      <h3><i class="fas fa-cogs"></i> Technische Fähigkeiten</h3>
 
-.card h3 i{
-  margin-right:10px;
-  color:#e76f51;
-}
+      <ul class="skills-list">
+        <li>Grundlagen der Elektronik und industriellen Automatisierung</li>
+        <li>Installation und Wartung von Schaltschränken</li>
+        <li>Programmierung von Mikrocontrollern</li>
+        <li>Fehlerbehebung in Steuerungssystemen</li>
+      </ul>
+    </div>
 
-.card p{
-  line-height:1.8;
-  margin-top:15px;
-}
+    <!-- IT -->
+    <div class="card">
+      <h3><i class="fas fa-laptop-code"></i> IT Kenntnisse</h3>
 
-.left{
-  animation:slideLeft 1s ease forwards;
-}
+      <ul class="skills-list">
+        <li>MS Office</li>
+        <li>Proteus ISIS</li>
+        <li>AutoCAD</li>
+        <li>MikroC</li>
+      </ul>
+    </div>
 
-.right{
-  animation:slideRight 1s ease forwards;
-}
-
-@keyframes slideLeft{
-  from{opacity:0; transform:translateX(-60px);}
-  to{opacity:1; transform:translateX(0);}
-}
-
-@keyframes slideRight{
-  from{opacity:0; transform:translateX(60px);}
-  to{opacity:1; transform:translateX(0);}
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  background:#eee;
-}
-
-@media(max-width:900px){
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .card{
-    max-width:100%;
-  }
-}
-</style>
-</head>
-
-<body>
+  </div>
+</section>
 
 <!-- NAV -->
 <nav>
