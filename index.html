@@ -99,11 +99,11 @@ h2{
   margin-bottom:20px;
 }
 
-/* FADE */
+/* FADE ANIMATION */
 .fade-up{
   opacity:0;
   transform:translateY(40px);
-  transition:all 1s ease;
+  transition:all 1s cubic-bezier(0.25,1,0.5,1);
 }
 
 .fade-up.show{
@@ -126,6 +126,7 @@ h2{
   background:#f1f5f9;
   padding:15px;
   border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
 .video-box video{
@@ -169,10 +170,7 @@ h2{
   border-radius:8px;
 }
 
-/* ===================== */
-/* SKILLS UPDATED FIX    */
-/* ===================== */
-
+/* SKILLS */
 .skills-container{
   display:flex;
   justify-content:space-between;
@@ -188,38 +186,40 @@ h2{
   padding:25px;
   border-radius:15px;
   box-shadow:0 5px 15px rgba(0,0,0,0.08);
-  transition:0.3s;
+  transition:0.4s;
 }
 
 .card:hover{
   transform:translateY(-10px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
 }
 
-/* LIST STYLE FIX */
-.skills-list{
-  list-style:none;
-  padding-left:0;
-  margin-top:15px;
-}
-
-.skills-list li{
-  background:white;
-  margin-bottom:10px;
-  padding:10px 15px;
-  border-radius:8px;
-  border-left:4px solid #e76f51;
-  transition:0.3s;
-}
-
-.skills-list li:hover{
-  transform:translateX(8px);
-  background:#fef3f0;
-}
-
-/* ICONS */
 .card h3 i{
   margin-right:10px;
   color:#e76f51;
+}
+
+.card p{
+  line-height:1.8;
+  margin-top:15px;
+}
+
+.left{
+  animation:slideLeft 1s ease forwards;
+}
+
+.right{
+  animation:slideRight 1s ease forwards;
+}
+
+@keyframes slideLeft{
+  from{opacity:0; transform:translateX(-60px);}
+  to{opacity:1; transform:translateX(0);}
+}
+
+@keyframes slideRight{
+  from{opacity:0; transform:translateX(60px);}
+  to{opacity:1; transform:translateX(0);}
 }
 
 /* FOOTER */
@@ -275,7 +275,7 @@ footer{
   </div>
 </div>
 
-<!-- VIDEO -->
+<!-- VIDEOS -->
 <section id="video" class="fade-up">
 <h2>Videos</h2>
 
@@ -284,14 +284,14 @@ footer{
 <div class="video-box">
 <h3>Video Vorstellung</h3>
 <video controls>
-<source src="BEWERBUNGSVIDEO.mp4">
+<source src="BEWERBUNGSVIDEO.mp4" type="video/mp4">
 </video>
 </div>
 
 <div class="video-box">
 <h3>Praktische Erfahrungen</h3>
 <video controls>
-<source src="PRAKTISCHEN ERFAHRUNGEN..mp4">
+<source src="PRAKTISCHEN ERFAHRUNGEN..mp4" type="video/mp4">
 </video>
 </div>
 
@@ -303,7 +303,7 @@ footer{
 <h2>Über mich</h2>
 
 <div class="box">
-Mein Name ist Mohamed Aich...
+...
 </div>
 </section>
 
@@ -325,28 +325,18 @@ Mein Name ist Mohamed Aich...
 
 <div class="skills-container">
 
-<!-- TECHNICAL -->
-<div class="card">
+<div class="card left">
 <h3><i class="fas fa-cogs"></i> Technische Fähigkeiten</h3>
-
-<ul class="skills-list">
-<li>Grundlagen der Elektronik und industriellen Automatisierung</li>
-<li>Installation und Wartung von Schaltschränken</li>
-<li>Programmierung von Mikrocontrollern</li>
-<li>Fehlerbehebung in Steuerungssystemen</li>
-</ul>
+<p>
+Elektronik, SPS, Mikrocontroller, Wartung
+</p>
 </div>
 
-<!-- IT -->
-<div class="card">
+<div class="card right">
 <h3><i class="fas fa-laptop-code"></i> IT Kenntnisse</h3>
-
-<ul class="skills-list">
-<li>MS Office</li>
-<li>Proteus ISIS</li>
-<li>AutoCAD</li>
-<li>MikroC</li>
-</ul>
+<p>
+MS Office, AutoCAD, Proteus, MikroC
+</p>
 </div>
 
 </div>
@@ -379,7 +369,7 @@ Mein Name ist Mohamed Aich...
 </footer>
 
 <script>
-// ANIMATION
+// FADE IN
 const elements=document.querySelectorAll(".fade-up");
 
 const observer=new IntersectionObserver(entries=>{
