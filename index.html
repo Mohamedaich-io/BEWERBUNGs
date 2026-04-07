@@ -99,11 +99,11 @@ h2{
   margin-bottom:20px;
 }
 
-/* FADE ANIMATION */
+/* FADE */
 .fade-up{
   opacity:0;
   transform:translateY(40px);
-  transition:all 1s cubic-bezier(0.25,1,0.5,1);
+  transition:all 1s ease;
 }
 
 .fade-up.show{
@@ -126,7 +126,6 @@ h2{
   background:#f1f5f9;
   padding:15px;
   border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
 .video-box video{
@@ -170,38 +169,80 @@ h2{
   border-radius:8px;
 }
 
-/* SKILLS */
-<section id="skills" class="fade-up">
-  <h2>Kompetenzen & Fähigkeiten</h2>
+/* ===================== */
+/* SKILLS UPDATED FIX    */
+/* ===================== */
 
-  <div class="skills-container">
+.skills-container{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  flex-wrap:wrap;
+}
 
-    <!-- TECHNICAL -->
-    <div class="card">
-      <h3><i class="fas fa-cogs"></i> Technische Fähigkeiten</h3>
+.card{
+  flex:1;
+  min-width:280px;
+  max-width:48%;
+  background:#f1f5f9;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
 
-      <ul class="skills-list">
-        <li>Grundlagen der Elektronik und industriellen Automatisierung</li>
-        <li>Installation und Wartung von Schaltschränken</li>
-        <li>Programmierung von Mikrocontrollern</li>
-        <li>Fehlerbehebung in Steuerungssystemen</li>
-      </ul>
-    </div>
+.card:hover{
+  transform:translateY(-10px);
+}
 
-    <!-- IT -->
-    <div class="card">
-      <h3><i class="fas fa-laptop-code"></i> IT Kenntnisse</h3>
+/* LIST STYLE FIX */
+.skills-list{
+  list-style:none;
+  padding-left:0;
+  margin-top:15px;
+}
 
-      <ul class="skills-list">
-        <li>MS Office</li>
-        <li>Proteus ISIS</li>
-        <li>AutoCAD</li>
-        <li>MikroC</li>
-      </ul>
-    </div>
+.skills-list li{
+  background:white;
+  margin-bottom:10px;
+  padding:10px 15px;
+  border-radius:8px;
+  border-left:4px solid #e76f51;
+  transition:0.3s;
+}
 
-  </div>
-</section>
+.skills-list li:hover{
+  transform:translateX(8px);
+  background:#fef3f0;
+}
+
+/* ICONS */
+.card h3 i{
+  margin-right:10px;
+  color:#e76f51;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#eee;
+}
+
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .card{
+    max-width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
 
 <!-- NAV -->
 <nav>
@@ -234,7 +275,7 @@ h2{
   </div>
 </div>
 
-<!-- VIDEOS -->
+<!-- VIDEO -->
 <section id="video" class="fade-up">
 <h2>Videos</h2>
 
@@ -243,14 +284,14 @@ h2{
 <div class="video-box">
 <h3>Video Vorstellung</h3>
 <video controls>
-<source src="BEWERBUNGSVIDEO.mp4" type="video/mp4">
+<source src="BEWERBUNGSVIDEO.mp4">
 </video>
 </div>
 
 <div class="video-box">
 <h3>Praktische Erfahrungen</h3>
 <video controls>
-<source src="PRAKTISCHEN ERFAHRUNGEN..mp4" type="video/mp4">
+<source src="PRAKTISCHEN ERFAHRUNGEN..mp4">
 </video>
 </div>
 
@@ -262,7 +303,7 @@ h2{
 <h2>Über mich</h2>
 
 <div class="box">
-...
+Mein Name ist Mohamed Aich...
 </div>
 </section>
 
@@ -284,18 +325,28 @@ h2{
 
 <div class="skills-container">
 
-<div class="card left">
+<!-- TECHNICAL -->
+<div class="card">
 <h3><i class="fas fa-cogs"></i> Technische Fähigkeiten</h3>
-<p>
-Elektronik, SPS, Mikrocontroller, Wartung
-</p>
+
+<ul class="skills-list">
+<li>Grundlagen der Elektronik und industriellen Automatisierung</li>
+<li>Installation und Wartung von Schaltschränken</li>
+<li>Programmierung von Mikrocontrollern</li>
+<li>Fehlerbehebung in Steuerungssystemen</li>
+</ul>
 </div>
 
-<div class="card right">
+<!-- IT -->
+<div class="card">
 <h3><i class="fas fa-laptop-code"></i> IT Kenntnisse</h3>
-<p>
-MS Office, AutoCAD, Proteus, MikroC
-</p>
+
+<ul class="skills-list">
+<li>MS Office</li>
+<li>Proteus ISIS</li>
+<li>AutoCAD</li>
+<li>MikroC</li>
+</ul>
 </div>
 
 </div>
@@ -328,7 +379,7 @@ MS Office, AutoCAD, Proteus, MikroC
 </footer>
 
 <script>
-// FADE IN
+// ANIMATION
 const elements=document.querySelectorAll(".fade-up");
 
 const observer=new IntersectionObserver(entries=>{
