@@ -3,287 +3,279 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bewerbung | Mohamed Aich</title>
+
+<title>Portfolio | Mohamed Aich</title>
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- ANIMATION -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Georgia',serif;}
 
-body{background:#f9f7f4;color:#1e293b;}
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#0d1117,#111827);
+    color:white;
+}
 
 /* NAV */
-nav{
-position:fixed;top:0;width:100%;
-background:white;padding:15px;text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+nav {
+    position:fixed;
+    width:100%;
+    top:0;
+    padding:15px;
+    text-align:center;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
 }
-nav a{margin:0 15px;text-decoration:none;font-weight:bold;color:#1e293b;}
-
-/* HERO */
-.hero{
-display:flex;align-items:center;justify-content:space-between;
-padding:120px 10%;min-height:100vh;
+nav a {
+    margin:10px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
 }
-.hero-text h1{font-size:60px;line-height:1.2;}
-.highlight{color:#e76f51;}
-.hero-text p{margin-top:20px;font-size:20px;}
-
-.btn{
-padding:12px 20px;border-radius:8px;text-decoration:none;
-margin-right:10px;font-weight:bold;
-}
-.primary{background:#e76f51;color:white;}
-.secondary{background:#eee;color:#333;}
-
-.hero-img img{
-width:350px;height:500px;object-fit:cover;border-radius:15px;
+nav a:hover {
+    color:orange;
 }
 
-/* SECTIONS */
-section{padding:80px 10%;background:white;}
-h2{font-size:32px;margin-bottom:20px;}
-
-/* ANIMATION */
-.fade-up{
-opacity:0;
-transform:translateY(40px);
-transition:all 1s cubic-bezier(0.25,1,0.5,1);
-}
-.fade-up.show{
-opacity:1;
-transform:translateY(0);
+/* SECTION */
+section {
+    padding:100px 10%;
+    min-height:100vh;
 }
 
-/* VIDEO GRID */
-.video-container{
-display:flex;
-gap:30px;
-flex-wrap:wrap;
-justify-content:center;
-}
-.video-box{
-flex:1;
-min-width:300px;
-max-width:500px;
-background:#f1f5f9;
-padding:15px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-.video-box video{
-width:100%;
-border-radius:10px;
+/* HOME */
+.home {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-/* ABOUT */
-.box{
-background:#fff3e6;padding:25px;border-radius:10px;line-height:1.8;
+.home h1 {
+    font-size:50px;
+}
+.home span {
+    color:orange;
 }
 
-/* TIMELINE */
-.timeline div{
-margin-bottom:15px;padding:15px;background:#f1f5f9;border-radius:10px;
+.btn {
+    margin-top:20px;
+    padding:12px 25px;
+    background:linear-gradient(45deg,orange,red);
+    border:none;
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    box-shadow:0 0 15px orange;
+    transition:0.3s;
+}
+.btn:hover {
+    transform:scale(1.1);
+}
+
+.home img {
+    width:300px;
+    border-radius:15px;
+    box-shadow:0 0 25px orange;
+}
+
+/* TITLES */
+h2 {
+    text-align:center;
+    margin-bottom:40px;
 }
 
 /* SKILLS */
-.skill{margin-bottom:15px;}
-.bar{background:#e2e8f0;height:10px;border-radius:10px;}
-.fill{
-height:100%;
-background:#e76f51;
-width:0;
-transition:width 1.5s ease-in-out;
+.skills-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
 }
 
-/* PROJECTS */
-.project{
-background:#f1f5f9;padding:20px;border-radius:10px;margin-bottom:20px;
+.skill {
+    background:#161b22;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    transition:0.4s;
+    border:1px solid transparent;
 }
-.gallery{
-display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;
-}
-.gallery img{
-width:30%;border-radius:8px;
+.skill:hover {
+    transform:translateY(-10px);
+    border:1px solid orange;
+    box-shadow:0 0 20px orange;
 }
 
-/* FOOTER */
-footer{text-align:center;padding:20px;background:#eee;}
-
-@media(max-width:900px){
-.hero{flex-direction:column;text-align:center;}
+.skill i {
+    font-size:40px;
+    margin-bottom:10px;
+    color:orange;
 }
+
+/* LANG */
+.languages {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+}
+.lang-box {
+    background:#161b22;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s;
+}
+.lang-box:hover {
+    background:orange;
+    color:black;
+}
+
+/* VIDEOS */
+.videos {
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.videos video {
+    width:45%;
+    border-radius:10px;
+    box-shadow:0 0 15px black;
+}
+
+/* CONTACT */
+.contact a {
+    display:block;
+    margin:10px;
+    color:orange;
+    font-size:18px;
+    transition:0.3s;
+}
+.contact a:hover {
+    color:white;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-<a href="#about">Über mich</a>
-<a href="#career">Werdegang</a>
-<a href="#skills">Kompetenzen</a>
-<a href="#projects">Projekte</a>
-<a href="#video">Video</a>
-<a href="#contact">Kontakt</a>
+<a href="#home"><i class="fa fa-house"></i> Start</a>
+<a href="#skills"><i class="fa fa-bolt"></i> Skills</a>
+<a href="#languages"><i class="fa fa-globe"></i> Sprachen</a>
+<a href="#videos"><i class="fa fa-video"></i> Videos</a>
+<a href="#contact"><i class="fa fa-phone"></i> Kontakt</a>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-<div class="hero-text">
-<h1>
-Bewerbung als <br>
-<span class="highlight">Elektroniker</span><br>
-für Automatisierungstechnik
-</h1>
+<!-- HOME -->
+<section id="home" class="home">
+<div data-aos="fade-right">
+<h1>Bewerbung als <br><span>Elektroniker für Automatisierungstechnik</span></h1>
 
-<p>Mohamed Aich</p>
-
-<br>
-<a class="btn primary" href="cv.pdf">Bewerbung herunterladen</a>
-<a class="btn secondary" href="#about">Mehr erfahren</a>
+<a href="Lebenslauf.pdf" class="btn" download>
+<i class="fa fa-file"></i> Lebenslauf herunterladen
+</a>
 </div>
 
-<div class="hero-img">
-<img src="FOTO.jpeg">
-</div>
-</div>
-
-<!-- VIDEOS -->
-<section id="video" class="fade-up">
-<h2>Videos</h2>
-
-<div class="video-container">
-
-<div class="video-box">
-<h3>Video Vorstellung</h3>
-<video controls>
-<source src="video.mp4" type="video/mp4">
-</video>
-</div>
-
-<div class="video-box">
-<h3>Praktische Erfahrungen</h3>
-<video controls>
-<source src="experience.mp4" type="video/mp4">
-</video>
-
-<p style="margin-top:10px;">
-Praktische Übungen im Bereich Elektronik und Automatisierung.
-</p>
-</div>
-
-</div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="fade-up">
-<h2>Über mich</h2>
-
-<div class="box">
-Ich bin ein motivierter Bewerber mit großem Interesse an Elektronik und Automatisierungstechnik.
-Mein Ziel ist eine Ausbildung in Deutschland, um meine Fähigkeiten weiterzuentwickeln.
-</div>
-</section>
-
-<!-- CAREER -->
-<section id="career" class="fade-up">
-<h2>Qualifikationen & Werdegang</h2>
-
-<div class="timeline">
-<div>2022 – Abitur abgeschlossen</div>
-<div>2024 – Diplom im Bereich Elektronik</div>
-<div>2025 – Deutsch B1 abgeschlossen</div>
-<div>Aktuell – Deutsch B2 Kurs</div>
-</div>
+<img src="deinfoto.jpg" data-aos="fade-left">
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="fade-up">
-<h2>Kompetenzen & Fähigkeiten</h2>
+<section id="skills">
 
-<div class="skill">Elektronik
-<div class="bar"><div class="fill" data-width="85%"></div></div>
+<h2 data-aos="fade-up">⚡ Technische Fähigkeiten</h2>
+
+<div class="skills-grid">
+
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-microchip"></i>
+<p>Elektronik Grundlagen</p>
 </div>
 
-<div class="skill">Automatisierung
-<div class="bar"><div class="fill" data-width="75%"></div></div>
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-gears"></i>
+<p>SPS Programmierung</p>
 </div>
 
-<div class="skill">Programmierung
-<div class="bar"><div class="fill" data-width="60%"></div></div>
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-robot"></i>
+<p>Mikrocontroller</p>
 </div>
 
-<div class="skill">Deutsch
-<div class="bar"><div class="fill" data-width="80%"></div></div>
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-wrench"></i>
+<p>Fehlerbehebung</p>
+</div>
+
+</div>
+
+<h2 data-aos="fade-up">💻 IT Kenntnisse</h2>
+
+<div class="skills-grid">
+
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-file-word"></i>
+<p>MS Office</p>
+</div>
+
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-drafting-compass"></i>
+<p>AutoCAD</p>
+</div>
+
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-laptop-code"></i>
+<p>Proteus</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- LANGUAGES -->
+<section id="languages">
+<h2 data-aos="fade-up">🌍 Fremdsprachen</h2>
+
+<div class="languages">
+
+<div class="lang-box" data-aos="flip-left">Deutsch (B2)</div>
+<div class="lang-box" data-aos="flip-left">Englisch</div>
+<div class="lang-box" data-aos="flip-left">Arabisch</div>
+<div class="lang-box" data-aos="flip-left">Französisch</div>
+
 </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="fade-up">
-<h2>Projekte</h2>
+<!-- VIDEOS -->
+<section id="videos">
+<h2 data-aos="fade-up">🎥 Meine Videos</h2>
 
-<div class="project">
-<h3>Elektronik Projekt</h3>
-<p>Beschreibung des Projekts.</p>
-
-<div class="gallery">
-<img src="p1.jpg">
-<img src="p2.jpg">
-<img src="p3.jpg">
-</div>
-</div>
-
-<div class="project">
-<h3>Automatisierung Projekt</h3>
-<p>Beschreibung des Projekts.</p>
-
-<div class="gallery">
-<img src="p4.jpg">
-<img src="p5.jpg">
-<img src="p6.jpg">
-</div>
+<div class="videos">
+<video controls src="vorstellung.mp4" data-aos="zoom-in"></video>
+<video controls src="erfahrung.mp4" data-aos="zoom-in"></video>
 </div>
 
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="fade-up">
-<h2>Kontakt</h2>
+<section id="contact" class="contact">
+<h2 data-aos="fade-up">📞 Kontakt</h2>
 
-<p>Email: yourmail@gmail.com</p>
-<p>WhatsApp: +212 ...</p>
+<a href="#"><i class="fa fa-phone"></i> +212719150300</a>
+<a href="#"><i class="fa fa-envelope"></i> your@email.com</a>
+<a href="#"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+
 </section>
 
-<footer>
-© 2026 Mohamed Aich
-</footer>
-
+<!-- SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-// SCROLL ANIMATION
-const elements = document.querySelectorAll(".fade-up");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold: 0.2 });
-
-elements.forEach(el => observer.observe(el));
-
-// SKILLS ANIMATION
-const fills = document.querySelectorAll(".fill");
-
-const skillObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      const fill = entry.target;
-      fill.style.width = fill.getAttribute("data-width");
-    }
-  });
-}, { threshold: 0.5 });
-
-fills.forEach(fill => skillObserver.observe(fill));
+AOS.init({
+    duration:1000
+});
 </script>
 
 </body>
