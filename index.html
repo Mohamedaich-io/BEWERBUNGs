@@ -1,1 +1,373 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOHAMED AICH | Portfolio ELEKTRONIKER</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary: #ff8c00; /* Das Orange aus deinen Fotos */
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #ffffff;
+            --text-dim: #b0b0b0;
+            --border: #333;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .highlight { color: var(--primary); }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            width: 100%;
+            background: rgba(18, 18, 18, 0.95);
+            padding: 15px 5%;
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: 1px; }
+        
+        nav ul { display: flex; list-style: none; }
+        nav ul li a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4)), url('HO.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .tag { 
+            color: var(--primary); 
+            font-weight: bold; 
+            border-left: 3px solid var(--primary); 
+            padding-left: 12px; 
+            margin-bottom: 15px; 
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 25px; font-weight: 900; }
+
+        .hero-desc { max-width: 550px; color: var(--text-dim); margin-bottom: 35px; font-size: 1.1rem; }
+
+        /* Buttons */
+        .btn-primary { background: var(--primary); color: white; padding: 15px 35px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block; margin-right: 15px; transition: 0.3s; }
+        .btn-outline { border: 1px solid var(--text-main); color: white; padding: 15px 35px; text-decoration: none; border-radius: 4px; font-weight: bold; transition: 0.3s; }
+        .btn-primary:hover { background: #e67e00; }
+        .btn-outline:hover { background: white; color: black; }
+
+        /* Section Styling */
+        section { padding: 100px 10%; }
+        .section-nr { color: var(--primary); font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; display: block; }
+        .main-title { font-size: 2.5rem; margin-bottom: 50px; text-transform: uppercase; font-weight: 800; }
+
+        /* Über Mich - Grid */
+        .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start; }
+        .about-img-box { position: relative; }
+        .about-img-box img { width: 100%; border-radius: 8px; filter: grayscale(20%); }
+        .img-tag { position: absolute; bottom: 20px; left: 20px; background: var(--primary); padding: 5px 15px; font-size: 0.7rem; font-weight: bold; }
+
+        .loc-tag { color: var(--primary); font-weight: bold; margin-bottom: 20px; display: block; }
+
+        /* Badges / Info-Karten */
+        .info-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .badge { background: var(--card-bg); padding: 18px; border-radius: 6px; font-size: 0.8rem; font-weight: bold; display: flex; align-items: center; gap: 10px; border-bottom: 3px solid #333; }
+        .badge i { color: var(--primary); font-size: 1.1rem; }
+        .badge.check { border-bottom-color: #28a745; }
+
+        /* Kompetenzen - Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .skill-card { background: var(--card-bg); padding: 35px; border-radius: 12px; transition: 0.4s; }
+        .skill-card:hover { transform: translateY(-10px); }
+        .skill-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; display: block; }
+        .skill-card h4 { margin-bottom: 15px; letter-spacing: 1px; }
+
+        .progress-bar { background: #333; height: 10px; border-radius: 5px; margin-bottom: 10px; overflow: hidden; }
+        .progress { background: var(--primary); height: 100%; border-radius: 5px; }
+        .skill-card p { font-size: 0.85rem; color: var(--text-dim); }
+
+        /* Werdegang / Erfahrung */
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline-item { margin-bottom: 40px; position: relative; }
+        .timeline-item::before {
+            content: ""; position: absolute; left: -31px; top: 5px;
+            width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 3px solid var(--bg-dark);
+        }
+        .timeline-date { color: var(--primary); font-weight: bold; font-size: 0.9rem; }
+        .timeline-content h4 { text-transform: uppercase; margin: 5px 0; }
+        .timeline-content p { color: var(--text-dim); font-size: 0.9rem; }
+
+        /* Ausbildung */
+        .qual-item { background: var(--card-bg); padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--primary); }
+
+        /* Sprachen */
+        .lang-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        .lang-card { background: var(--card-bg); padding: 20px; text-align: center; border-radius: 8px; }
+        .dots { color: var(--primary); margin-top: 10px; }
+        
+        /* Projekte Grid */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .project-card { background: var(--card-bg); border-radius: 10px; overflow: hidden; }
+        .project-card img, .project-card video { width: 100%; height: 250px; object-fit: cover; }
+        .project-info { padding: 20px; }
+        .project-info h4 { color: var(--primary); margin-bottom: 10px; font-size: 0.9rem; }
+        .project-info p { font-size: 0.85rem; color: var(--text-dim); }
+
+        /* Kontakt */
+        .contact-box { background: var(--card-bg); padding: 40px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+        .contact-item { margin-bottom: 15px; font-size: 1.1rem; display: flex; align-items: center; gap: 15px; }
+        .contact-item i { color: var(--primary); width: 20px; }
+        
+        .btn-whatsapp { background: #25d366; color: white; padding: 20px 50px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; font-size: 1.2rem; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+            .contact-box { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MOHAMED <span class="highlight">AICH</span></div>
+        <nav>
+            <ul>
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#skills">Fähigkeiten</a></li>
+                <li><a href="#projects">Projekte</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="tag">BEWERBUNG 2026 • ELEKTRONIKER</p>
+            <h1>BEWERBUNG ALS <br><span class="highlight">ELEKTRONIKER FÜR AUTOMATISIERUNGSTECHNIK</span></h1>
+            <p class="hero-desc">Engagierter und motivierter angehender Elektroniker für Automatisierungstechnik mit Erfahrung in SPS-Programmierung, Mikrocontrollern und industrieller Elektronik.</p>
+            
+            <div class="hero-btns">
+                <a href="LB.pdf" target="_blank" class="btn-primary">
+                    <i class="far fa-file-pdf"></i> LEBENSLAUF ANSEHEN
+                </a>
+                <a href="MEINE ZEUGNISSE.pdf" target="_blank" class="btn-outline">
+                    <i class="fas fa-certificate"></i> MEINE ZEUGNISSE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <span class="section-nr">01 — ÜBER MICH</span>
+        <h2 class="main-title">WER BIN <span class="highlight">ICH?</span></h2>
+        <div class="about-grid">
+            <div class="about-img-box">
+                <img src="profile.jpg" alt="Mohamed Aich">
+                <span class="img-tag">BEWERBER - ELEKTRONIKER</span>
+            </div>
+            <div class="about-text">
+                <h3>MOHAMED AICH</h3>
+                <span class="loc-tag">ELEKTRONIKER • Marokko → Deutschland</span>
+                <p>Motivierter und zielstrebiger angehender Elektroniker für Automatisierungstechnik mit praktischer Erfahrung in Elektronik, Automatisierungssystemen und industriellen Steuerungen. Meine Kenntnisse habe ich durch eine staatlich anerkannte Ausbildung am OFPPT sowie durch praktische Projekte und Berufspraktika aufgebaut. Ich arbeite präzise, sorgfältig und teamorientiert – bei der Installation, Wartung und Fehlersuche in elektrischen und automatisierten Systemen sowie bei der Arbeit mit SPS-Programmierung und Mikrocontrollern. Ich bin lernbereit und möchte meine technischen Fähigkeiten in Deutschland weiterentwickeln.</p>
+                
+                <div class="info-badges">
+                    <div class="badge"><i class="fas fa-bullseye"></i> MOTIVATION</div>
+                    <div class="badge"><i class="fas fa-users"></i> TEAMARBEIT</div>
+                    <div class="badge check"><i class="fas fa-check-square"></i> ZUVERLÄSSIGKEIT</div>
+                    <div class="badge"><i class="fas fa-bolt"></i> ELEKTROBEGEISTERUNG</div>
+                    <div class="badge"><i class="fas fa-graduation-cap"></i> LERNBEREITSCHAFT</div>
+                    <div class="badge"><i class="fas fa-car"></i> FÜHRERSCHEIN KL. B</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <span class="section-nr">02 — FÄHIGKEITEN</span>
+        <h2 class="main-title">MEINE <span class="highlight">KOMPETENZEN</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-microchip"></i>
+                <h4>SPS-PROGRAMMIERUNG</h4>
+                <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+                <p>Sehr stark ausgeprägt</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-cogs"></i>
+                <h4>SCHALTSCHRANKBAU</h4>
+                <div class="progress-bar"><div class="progress" style="width: 92%;"></div></div>
+                <p>Sehr stark ausgeprägt</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h4>MIKROCONTROLLER</h4>
+                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                <p>Sehr stark ausgeprägt</p>
+            </div>
+       <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h4>MC-OFFICE</h4>
+                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                <p>Sehr stark ausgeprägt</p>
+            </div>
+      <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h4>TIA PORTAL</h4>
+                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                <p>Sehr stark ausgeprägt</p>
+            </div>
+       <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h4>AUTOCAD</h4>
+                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                <p> stark ausgeprägt</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <span class="section-nr">03 — BERUFSERFAHRUNG</span>
+        <h2 class="main-title">MEIN <span class="highlight">WERDEGANG</span></h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-date">05.2024 - 06.2024</span>
+                <div class="timeline-content">
+                    <h4>Praktikant als ELEKTROTECHNIK</h4>
+                    <p>SONASID Werkstatt - NADOR, Marokko</p>
+                    <p>Analyse und Untersuchung der Funktionsweise des Hochspannungstransformatoren.</p>
+<p>Unterschtuzung bei Wartungs-und Reparaturarbeiten.</p>
+<p>Anwendung des Qualitätstools (5S).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <span class="section-nr">04 — AUSBILDUNG</span>
+        <h2 class="main-title">MEINE <span class="highlight">QUALIFIKATIONEN</span></h2>
+        <div class="qual-item">
+            <span class="timeline-date">09.2025 - 12.2025</span>
+            <h4>Intensive Deutschkurs B2</h4>
+            <p>I.M.A.I Institut - abgeschlossen</p>
+        </div>
+        <div class="qual-item">
+            <span class="timeline-date">07.2025</span>
+            <h4>Deutsch Zertifikat B1</h4>
+            <p>I.M.A.I Institut - Erfolgreich abgeschlossen</p>
+        </div>
+        <div class="qual-item">
+            <span class="timeline-date">09.2022 - 06.2024</span>
+            <h4>Fachtechniker-Diplom (Eektronik,Automatisierung und Rootik)</h4>
+            <p>OFPPT - NADOR (Staatlich anerkannt)</p>
+        </div>
+        <div class="qual-item">
+            <span class="timeline-date">09.2022 - 06.2024</span>
+            <h4>Ausbildungszertifikat</h4>
+            <p>OFPPT - NADOR (Staatlich anerkannt)</p>
+        </div>
+    </section>
+
+    <section id="languages">
+        <span class="section-nr">05 — SPRACHKENNTNISSE</span>
+        <h2 class="main-title">MEINE <span class="highlight">SPRACHEN</span></h2>
+        <div class="lang-grid">
+            <div class="lang-card"><h3>MA</h3><p>Arabisch (Muttersprache)</p><p class="dots">●●●●●</p></div>
+            <div class="lang-card"><h3>DE</h3><p>Deutsch (B2 Niveau)</p><p class="dots">●●●○○</p></div>
+            <div class="lang-card"><h3>FR</h3><p>Französisch (Grundkenntnisse)</p><p class="dots">●●●○○</p></div>
+            <div class="lang-card"><h3>EN</h3><p>Englisch (Grundkenntnisse)</p><p class="dots">●●●○○</p></div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <span class="section-nr">06 — MEINE ARBEITEN</span>
+        <h2 class="main-title">MEINE <span class="highlight">PROJEKTE</span></h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <video controls><source src="SPS.mp4" type="video/mp4"></video>
+                <div class="project-info">
+                    <h4>SPS-PROGRAMMIEREN</h4>
+                    <p>Eine SPS-Steuerung auf einer Siemens S7-1500 programmieren, um pneumatische Zylinder anzusteuern</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <video controls><source src="https://raw.githubusercontent.com/Mohamedaich-io/BEWERBUNGs/f3c493ec2872a4f9692e1acd407b8145978cb522/ANAC4839.MP4" type="video/mp4"></video>
+                <div class="project-info">
+                    <h4>ARDUINO-PROJEKT</h4>
+                    <p>Eine LED-Arduino mit dem Programm ISIS Proteus erstellen und programmieren</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="BB.jpeg" alt="MOTOR">
+                <div class="project-info">
+                    <h4>DREIPHASIGER MOTOR</h4>
+                    <p>Schaltung für den Anlauf eines dreiphasigen Asynchronmotors mit Rechts- und Linkslauf realisiert</p>
+                </div>
+            </div>
+       <div class="project-card">
+                <img src="CC.jpeg" alt="ROBOT">
+                <div class="project-info">
+                    <h4>6-ACHSEN-ROBOTER</h4>
+                    <p>Programmierung eines 6-Achsen-Roboters mit VAL3 Sprache</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <span class="section-nr">07 — KONTAKT</span>
+        <h2 class="main-title">SCHREIBEN <span class="highlight">SIE MIR</span></h2>
+        <div class="contact-box">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-envelope"></i> Mohamed.aich205@gmail.com</div>
+                <div class="contact-item"><i class="fas fa-phone"></i> +212 600.513.450</div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> NADOR, MAROKKO</div>
+            </div>
+            <div class="contact-cta">
+                <a href="https://wa.me/212600513450" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WHATSAPP
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
