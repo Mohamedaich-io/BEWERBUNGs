@@ -3,280 +3,234 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Portfolio | Mohamed Aich</title>
 
-<!-- ICONS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- ANIMATION -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
 <style>
-
 body {
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#0d1117,#111827);
-    color:white;
+    margin: 0;
+    font-family: Arial;
+    background: #0d1117;
+    color: white;
 }
 
 /* NAV */
 nav {
-    position:fixed;
-    width:100%;
-    top:0;
-    padding:15px;
-    text-align:center;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    background: #0d1117;
+    padding: 15px;
+    text-align: center;
 }
 nav a {
-    margin:10px;
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
-}
-nav a:hover {
-    color:orange;
+    color: white;
+    margin: 10px;
+    text-decoration: none;
 }
 
 /* SECTION */
 section {
-    padding:100px 10%;
-    min-height:100vh;
+    padding: 100px 10%;
+    min-height: 100vh;
 }
 
 /* HOME */
 .home {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-.home h1 {
-    font-size:50px;
+.home-text h1 {
+    font-size: 45px;
 }
-.home span {
-    color:orange;
+.home-text span {
+    color: orange;
 }
 
 .btn {
-    margin-top:20px;
-    padding:12px 25px;
-    background:linear-gradient(45deg,orange,red);
-    border:none;
-    color:white;
-    border-radius:8px;
-    text-decoration:none;
-    box-shadow:0 0 15px orange;
-    transition:0.3s;
-}
-.btn:hover {
-    transform:scale(1.1);
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: orange;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
+/* IMAGE */
 .home img {
-    width:300px;
-    border-radius:15px;
-    box-shadow:0 0 25px orange;
-}
-
-/* TITLES */
-h2 {
-    text-align:center;
-    margin-bottom:40px;
+    width: 280px;
+    border-radius: 10px;
 }
 
 /* SKILLS */
+.skills-container {
+    margin-top: 40px;
+}
+
 .skills-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
 }
 
 .skill {
-    background:#161b22;
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
-    transition:0.4s;
-    border:1px solid transparent;
-}
-.skill:hover {
-    transform:translateY(-10px);
-    border:1px solid orange;
-    box-shadow:0 0 20px orange;
+    background: #161b22;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
 }
 
-.skill i {
-    font-size:40px;
-    margin-bottom:10px;
-    color:orange;
+.skill img {
+    width: 50px;
+    margin-bottom: 10px;
 }
 
-/* LANG */
+/* LANGUAGES */
 .languages {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap: 20px;
 }
+
 .lang-box {
-    background:#161b22;
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
-    transition:0.3s;
-}
-.lang-box:hover {
-    background:orange;
-    color:black;
+    background: #161b22;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 /* VIDEOS */
 .videos {
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
+    display: flex;
+    gap: 20px;
 }
 .videos video {
-    width:45%;
-    border-radius:10px;
-    box-shadow:0 0 15px black;
+    width: 45%;
 }
 
 /* CONTACT */
+.contact {
+    text-align: center;
+}
 .contact a {
-    display:block;
-    margin:10px;
-    color:orange;
-    font-size:18px;
-    transition:0.3s;
+    display: block;
+    color: orange;
+    margin: 10px;
 }
-.contact a:hover {
-    color:white;
-}
-
 </style>
+
 </head>
 
 <body>
 
 <nav>
-<a href="#home"><i class="fa fa-house"></i> Start</a>
-<a href="#skills"><i class="fa fa-bolt"></i> Skills</a>
-<a href="#languages"><i class="fa fa-globe"></i> Sprachen</a>
-<a href="#videos"><i class="fa fa-video"></i> Videos</a>
-<a href="#contact"><i class="fa fa-phone"></i> Kontakt</a>
+<a href="#home">Start</a>
+<a href="#skills">Kompetenzen</a>
+<a href="#languages">Sprachen</a>
+<a href="#videos">Videos</a>
+<a href="#contact">Kontakt</a>
 </nav>
 
 <!-- HOME -->
 <section id="home" class="home">
-<div data-aos="fade-right">
+<div class="home-text">
 <h1>Bewerbung als <br><span>Elektroniker für Automatisierungstechnik</span></h1>
 
-<a href="Lebenslauf.pdf" class="btn" download>
-<i class="fa fa-file"></i> Lebenslauf herunterladen
-</a>
+<p>Motiviert und bereit für meine Ausbildung.</p>
+
+<a href="Lebenslauf.pdf" class="btn" download>📄 Lebenslauf herunterladen</a>
 </div>
 
-<img src="deinfoto.jpg" data-aos="fade-left">
+<img src="deinfoto.jpg">
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
 
-<h2 data-aos="fade-up">⚡ Technische Fähigkeiten</h2>
-
+<h2>Technische Fähigkeiten</h2>
+<div class="skills-container">
 <div class="skills-grid">
 
-<div class="skill" data-aos="zoom-in">
-<i class="fa fa-microchip"></i>
+<div class="skill">
+<img src="img1.png">
 <p>Elektronik Grundlagen</p>
 </div>
 
-<div class="skill" data-aos="zoom-in">
-<i class="fa fa-gears"></i>
+<div class="skill">
+<img src="img2.png">
 <p>SPS Programmierung</p>
 </div>
 
-<div class="skill" data-aos="zoom-in">
-<i class="fa fa-robot"></i>
+<div class="skill">
+<img src="img3.png">
 <p>Mikrocontroller</p>
 </div>
 
-<div class="skill" data-aos="zoom-in">
-<i class="fa fa-wrench"></i>
+<div class="skill">
+<img src="img4.png">
 <p>Fehlerbehebung</p>
 </div>
 
 </div>
+</div>
 
-<h2 data-aos="fade-up">💻 IT Kenntnisse</h2>
-
+<h2>IT Kenntnisse</h2>
+<div class="skills-container">
 <div class="skills-grid">
 
-<div class="skill" data-aos="zoom-in">
-<i class="fa fa-file-word"></i>
+<div class="skill">
+<img src="img5.png">
 <p>MS Office</p>
 </div>
 
-<div class="skill" data-aos="zoom-in">
-<i class="fa fa-drafting-compass"></i>
+<div class="skill">
+<img src="img6.png">
 <p>AutoCAD</p>
 </div>
 
-<div class="skill" data-aos="zoom-in">
-<i class="fa fa-laptop-code"></i>
+<div class="skill">
+<img src="img7.png">
 <p>Proteus</p>
 </div>
 
+</div>
 </div>
 
 </section>
 
 <!-- LANGUAGES -->
 <section id="languages">
-<h2 data-aos="fade-up">🌍 Fremdsprachen</h2>
+<h2>Fremdsprachen</h2>
 
 <div class="languages">
-
-<div class="lang-box" data-aos="flip-left">Deutsch (B2)</div>
-<div class="lang-box" data-aos="flip-left">Englisch</div>
-<div class="lang-box" data-aos="flip-left">Arabisch</div>
-<div class="lang-box" data-aos="flip-left">Französisch</div>
-
+<div class="lang-box">Deutsch (B2)</div>
+<div class="lang-box">Englisch</div>
+<div class="lang-box">Arabisch</div>
+<div class="lang-box">Französisch</div>
 </div>
+
 </section>
 
 <!-- VIDEOS -->
 <section id="videos">
-<h2 data-aos="fade-up">🎥 Meine Videos</h2>
+<h2>Meine Videos</h2>
 
 <div class="videos">
-<video controls src="vorstellung.mp4" data-aos="zoom-in"></video>
-<video controls src="erfahrung.mp4" data-aos="zoom-in"></video>
+<video controls src="vorstellung.mp4"></video>
+<video controls src="erfahrung.mp4"></video>
 </div>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-<h2 data-aos="fade-up">📞 Kontakt</h2>
+<h2>Kontakt</h2>
 
-<a href="#"><i class="fa fa-phone"></i> +212719150300</a>
-<a href="#"><i class="fa fa-envelope"></i> your@email.com</a>
-<a href="#"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+212719150300">📞 Telefon</a>
+<a href="mailto:your@email.com">📧 Email</a>
+<a href="https://wa.me/212719150300">💬 WhatsApp</a>
 
 </section>
-
-<!-- SCRIPT -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init({
-    duration:1000
-});
-</script>
 
 </body>
 </html>
