@@ -1,176 +1,282 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfolio - Elektroniker</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-    }
+<title>Portfolio | Mohamed Aich</title>
 
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(135deg, #0ea5e9, #1e293b);
-    }
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    h1 {
-      margin: 10px 0;
-      font-size: 32px;
-    }
+<!-- ANIMATION -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    p {
-      color: #cbd5e1;
-    }
+<style>
 
-    /* PROFILE IMAGE */
-    .profile-container {
-      display: flex;
-      justify-content: center;
-      margin-top: -60px;
-    }
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#0d1117,#111827);
+    color:white;
+}
 
-    .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #0ea5e9;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      transition: 0.3s;
-      background: white;
-    }
+/* NAV */
+nav {
+    position:fixed;
+    width:100%;
+    top:0;
+    padding:15px;
+    text-align:center;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+}
+nav a {
+    margin:10px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+nav a:hover {
+    color:orange;
+}
 
-    .profile-img:hover {
-      transform: scale(1.05);
-    }
+/* SECTION */
+section {
+    padding:100px 10%;
+    min-height:100vh;
+}
 
-    /* SECTIONS */
-    .section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+/* HOME */
+.home {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    }
+.home h1 {
+    font-size:50px;
+}
+.home span {
+    color:orange;
+}
 
-    .title {
-      font-size: 22px;
-      margin-bottom: 10px;
-      color: #0ea5e9;
-    }
+.btn {
+    margin-top:20px;
+    padding:12px 25px;
+    background:linear-gradient(45deg,orange,red);
+    border:none;
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    box-shadow:0 0 15px orange;
+    transition:0.3s;
+}
+.btn:hover {
+    transform:scale(1.1);
+}
 
-    /* SKILLS */
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
+.home img {
+    width:300px;
+    border-radius:15px;
+    box-shadow:0 0 25px orange;
+}
 
-    .skill {
-      background: #0f172a;
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-      border: 1px solid #334155;
-      transition: 0.3s;
-    }
+/* TITLES */
+h2 {
+    text-align:center;
+    margin-bottom:40px;
+}
 
-    .skill:hover {
-      transform: scale(1.05);
-      border-color: #0ea5e9;
-    }
+/* SKILLS */
+.skills-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
 
-    /* BUTTON */
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #0ea5e9;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
+.skill {
+    background:#161b22;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    transition:0.4s;
+    border:1px solid transparent;
+}
+.skill:hover {
+    transform:translateY(-10px);
+    border:1px solid orange;
+    box-shadow:0 0 20px orange;
+}
 
-    .btn:hover {
-      background: #0284c7;
-    }
+.skill i {
+    font-size:40px;
+    margin-bottom:10px;
+    color:orange;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #94a3b8;
-      margin-top: 40px;
-    }
-  </style>
+/* LANG */
+.languages {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+}
+.lang-box {
+    background:#161b22;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    transition:0.3s;
+}
+.lang-box:hover {
+    background:orange;
+    color:black;
+}
+
+/* VIDEOS */
+.videos {
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.videos video {
+    width:45%;
+    border-radius:10px;
+    box-shadow:0 0 15px black;
+}
+
+/* CONTACT */
+.contact a {
+    display:block;
+    margin:10px;
+    color:orange;
+    font-size:18px;
+    transition:0.3s;
+}
+.contact a:hover {
+    color:white;
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>Mohamed Aich</h1>
-  <p>Elektroniker für Automatisierungstechnik</p>
-</header>
+<nav>
+<a href="#home"><i class="fa fa-house"></i> Start</a>
+<a href="#skills"><i class="fa fa-bolt"></i> Skills</a>
+<a href="#languages"><i class="fa fa-globe"></i> Sprachen</a>
+<a href="#videos"><i class="fa fa-video"></i> Videos</a>
+<a href="#contact"><i class="fa fa-phone"></i> Kontakt</a>
+</nav>
 
-<!-- PROFILE IMAGE -->
-<div class="profile-container">
-  <img src="Foto.jpeg" class="profile-img" alt="Profil Bild">
+<!-- HOME -->
+<section id="home" class="home">
+<div data-aos="fade-right">
+<h1>Bewerbung als <br><span>Elektroniker für Automatisierungstechnik</span></h1>
+
+<a href="Lebenslauf.pdf" class="btn" download>
+<i class="fa fa-file"></i> Lebenslauf herunterladen
+</a>
 </div>
 
-<!-- ABOUT -->
-<div class="section">
-  <div class="card">
-    <div class="title">Über mich</div>
-    <p>
-      Ich bin ein angehender Elektroniker für Automatisierungstechnik mit Erfahrung in
-      Elektronik, SPS, Mikrocontroller und industriellen Systemen.
-    </p>
-  </div>
+<img src="deinfoto.jpg" data-aos="fade-left">
+</section>
 
-  <!-- SKILLS -->
-  <div class="card">
-    <div class="title">Technische Fähigkeiten</div>
-    <div class="skills">
-      <div class="skill">🔌 Elektronik Grundlagen</div>
-      <div class="skill">⚙️ Automatisierungstechnik</div>
-      <div class="skill">🤖 SPS Programmierung</div>
-      <div class="skill">🔧 Fehlerbehebung</div>
-      <div class="skill">💡 Mikrocontroller</div>
-    </div>
-  </div>
+<!-- SKILLS -->
+<section id="skills">
 
-  <div class="card">
-    <div class="title">IT Kenntnisse</div>
-    <div class="skills">
-      <div class="skill">💻 MS Office</div>
-      <div class="skill">🛠️ AutoCAD</div>
-      <div class="skill">🔬 Proteus ISIS</div>
-      <div class="skill">📟 MikroC</div>
-    </div>
-  </div>
+<h2 data-aos="fade-up">⚡ Technische Fähigkeiten</h2>
 
-  <!-- CV DOWNLOAD -->
-  <div class="card" style="text-align:center;">
-    <div class="title">Lebenslauf</div>
-    <p>Download my CV here:</p>
-    <a class="btn" href="#">Download CV</a>
-  </div>
+<div class="skills-grid">
+
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-microchip"></i>
+<p>Elektronik Grundlagen</p>
 </div>
 
-<footer>
-  © 2026 Mohamed Aich | Portfolio
-</footer>
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-gears"></i>
+<p>SPS Programmierung</p>
+</div>
+
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-robot"></i>
+<p>Mikrocontroller</p>
+</div>
+
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-wrench"></i>
+<p>Fehlerbehebung</p>
+</div>
+
+</div>
+
+<h2 data-aos="fade-up">💻 IT Kenntnisse</h2>
+
+<div class="skills-grid">
+
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-file-word"></i>
+<p>MS Office</p>
+</div>
+
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-drafting-compass"></i>
+<p>AutoCAD</p>
+</div>
+
+<div class="skill" data-aos="zoom-in">
+<i class="fa fa-laptop-code"></i>
+<p>Proteus</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- LANGUAGES -->
+<section id="languages">
+<h2 data-aos="fade-up">🌍 Fremdsprachen</h2>
+
+<div class="languages">
+
+<div class="lang-box" data-aos="flip-left">Deutsch (B2)</div>
+<div class="lang-box" data-aos="flip-left">Englisch</div>
+<div class="lang-box" data-aos="flip-left">Arabisch</div>
+<div class="lang-box" data-aos="flip-left">Französisch</div>
+
+</div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+<h2 data-aos="fade-up">🎥 Meine Videos</h2>
+
+<div class="videos">
+<video controls src="vorstellung.mp4" data-aos="zoom-in"></video>
+<video controls src="erfahrung.mp4" data-aos="zoom-in"></video>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<h2 data-aos="fade-up">📞 Kontakt</h2>
+
+<a href="#"><i class="fa fa-phone"></i> +212719150300</a>
+<a href="#"><i class="fa fa-envelope"></i> your@email.com</a>
+<a href="#"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+
+</section>
+
+<!-- SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+    duration:1000
+});
+</script>
 
 </body>
 </html>
